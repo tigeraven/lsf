@@ -1,0 +1,621 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LiveMesh Tools\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-29 09:58+0530\n"
+"PO-Revision-Date: 2015-04-29 09:58+0530\n"
+"Last-Translator: LiveMesh <portfoliothemes@gmail.com>\n"
+"Language-Team: LiveMesh Themes - http://portfoliotheme.org\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __ ;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/gallery-admin.php:91
+msgid "Gallery Title"
+msgstr ""
+
+#: admin/gallery-admin.php:92 admin/team-admin.php:105
+msgid "Thumbnail"
+msgstr ""
+
+#: admin/gallery-admin.php:93
+msgid "Category"
+msgstr ""
+
+#: admin/page-section-admin.php:92
+msgid "Order"
+msgstr ""
+
+#: admin/page-section-admin.php:103 admin/team-admin.php:118
+msgid "Team Information"
+msgstr ""
+
+#: admin/page-section-admin.php:119
+msgid "Page Section Description:"
+msgstr ""
+
+#: admin/page-section-admin.php:121
+msgid ""
+"Enter a short description for this page section. This description for the "
+"page\n"
+"                    sections is shown in the page edit window for single "
+"page site template pages.<p>When composing a\n"
+"                        single page, this optional description comes handy "
+"in identifying a page section when there are\n"
+"                        many similar page sections or when title is too "
+"short to provide any clue about the function or\n"
+"                        purpose of the page section."
+msgstr ""
+
+#: admin/portfolio-admin.php:80
+msgid "Portfolio Name"
+msgstr ""
+
+#: admin/portfolio-admin.php:81
+msgid "Portfolio Image"
+msgstr ""
+
+#: admin/portfolio-admin.php:82
+msgid "Portfolio Link"
+msgstr ""
+
+#: admin/portfolio-admin.php:83
+msgid "Portfolio Client"
+msgstr ""
+
+#: admin/portfolio-admin.php:84
+msgid "Portfolio Services"
+msgstr ""
+
+#: admin/portfolio-admin.php:125
+msgid "Portfolio Information"
+msgstr ""
+
+#: admin/portfolio-admin.php:145
+msgid "Project URL"
+msgstr ""
+
+#: admin/portfolio-admin.php:148
+msgid "URL of the project executed for the client."
+msgstr ""
+
+#: admin/portfolio-admin.php:154
+msgid "Services Offered"
+msgstr ""
+
+#: admin/portfolio-admin.php:157
+msgid "The services offered as part the client project."
+msgstr ""
+
+#: admin/portfolio-admin.php:163
+msgid "Client"
+msgstr ""
+
+#: admin/portfolio-admin.php:166
+msgid "Name of the client for whom the project was executed."
+msgstr ""
+
+#: admin/portfolio-admin.php:172
+msgid "Project Date"
+msgstr ""
+
+#: admin/portfolio-admin.php:174
+msgid "Date of the client project."
+msgstr ""
+
+#: admin/portfolio-admin.php:181
+msgid "Additional Project Notes (HTML accepted)"
+msgstr ""
+
+#: admin/portfolio-admin.php:184
+msgid "Any additional description of the project executed."
+msgstr ""
+
+#: admin/pricing-admin.php:105
+msgid "Pricing Plan Name"
+msgstr ""
+
+#: admin/pricing-admin.php:106
+msgid "Price Tag"
+msgstr ""
+
+#: admin/pricing-admin.php:107
+msgid "Tagline"
+msgstr ""
+
+#: admin/pricing-admin.php:108
+msgid "Image"
+msgstr ""
+
+#: admin/pricing-admin.php:109
+msgid "Pricing Plan URL"
+msgstr ""
+
+#: admin/pricing-admin.php:110
+msgid "Pricing Plan Order"
+msgstr ""
+
+#: admin/pricing-admin.php:120
+msgid "Pricing Information"
+msgstr ""
+
+#: admin/pricing-admin.php:140
+msgid "Price Tag:"
+msgstr ""
+
+#: admin/pricing-admin.php:143
+msgid "Enter the price tag for the pricing plan. HTML is accepted."
+msgstr ""
+
+#: admin/pricing-admin.php:148
+msgid "Tagline Text:"
+msgstr ""
+
+#: admin/pricing-admin.php:150
+msgid ""
+"Provide any taglines like \"Most Popular\", \"Best Value\", \"Best Selling"
+"\", \"Most\n"
+"                    Flexible\" etc. that you would like to use for this "
+"pricing plan."
+msgstr ""
+
+#: admin/pricing-admin.php:157
+msgid "Pricing Image URL:"
+msgstr ""
+
+#: admin/pricing-admin.php:160
+msgid "Choose the custom image that represents this pricing plan, if any."
+msgstr ""
+
+#: admin/pricing-admin.php:167
+msgid "URL for the Pricing link/button:"
+msgstr ""
+
+#: admin/pricing-admin.php:170
+msgid ""
+"Provide the target URL for the link or the button shown for this pricing "
+"plan."
+msgstr ""
+
+#: admin/pricing-admin.php:177
+msgid "Text for Pricing Link/Button:"
+msgstr ""
+
+#: admin/pricing-admin.php:180
+msgid ""
+"Provide the text for the link or the button shown for this pricing plan."
+msgstr ""
+
+#: admin/pricing-admin.php:187
+msgid "Highlight Pricing Plan:"
+msgstr ""
+
+#: admin/pricing-admin.php:190
+msgid "Specify if you want to highlight the pricing plan."
+msgstr ""
+
+#: admin/slider-admin.php:84
+msgid "Showcase Slide Name"
+msgstr ""
+
+#: admin/slider-admin.php:85
+msgid "Showcase Slide Link"
+msgstr ""
+
+#: admin/slider-admin.php:107
+msgid "Showcase Slide Information"
+msgstr ""
+
+#: admin/slider-admin.php:124
+msgid "Showcase Slider Item Link:"
+msgstr ""
+
+#: admin/slider-admin.php:127
+msgid "The URL to which the slide should link to."
+msgstr ""
+
+#: admin/slider-admin.php:134
+msgid "Showcase Slide Information (HTML accepted):"
+msgstr ""
+
+#: admin/slider-admin.php:136
+msgid ""
+"Specify the text that is displayed as the description below the title. The\n"
+"                    title of the post is the slider title."
+msgstr ""
+
+#: admin/team-admin.php:104
+msgid "Team Member Name"
+msgstr ""
+
+#: admin/team-admin.php:106
+msgid "Position"
+msgstr ""
+
+#: admin/team-admin.php:107
+msgid "Department"
+msgstr ""
+
+#: admin/team-admin.php:108
+msgid "Team Order"
+msgstr ""
+
+#: admin/team-admin.php:141
+msgid "Team Member Position:"
+msgstr ""
+
+#: admin/team-admin.php:143
+msgid "Enter the position of the team member."
+msgstr ""
+
+#: admin/team-admin.php:149
+msgid "Member Email Address:"
+msgstr ""
+
+#: admin/team-admin.php:152
+msgid "Enter the email address of the team member."
+msgstr ""
+
+#: admin/team-admin.php:158
+msgid "Twitter Profile URL:"
+msgstr ""
+
+#: admin/team-admin.php:161
+msgid "URL of the Twitter page of the team member."
+msgstr ""
+
+#: admin/team-admin.php:167
+msgid "LinkedIn Profile URL:"
+msgstr ""
+
+#: admin/team-admin.php:170
+msgid "URL of the LinkedIn profile of the team member."
+msgstr ""
+
+#: admin/team-admin.php:176
+msgid "Facebook Page URL:"
+msgstr ""
+
+#: admin/team-admin.php:179
+msgid "URL of the Facebook page of the team member."
+msgstr ""
+
+#: admin/team-admin.php:185
+msgid "Dribbble Profile URL:"
+msgstr ""
+
+#: admin/team-admin.php:188
+msgid "URL of the Dribbble profile of the team member."
+msgstr ""
+
+#: admin/team-admin.php:194
+msgid "GooglePlus Page URL:"
+msgstr ""
+
+#: admin/team-admin.php:197
+msgid "URL of the Google Plus page of the team member."
+msgstr ""
+
+#: admin/team-admin.php:202
+msgid "Instagram Page URL:"
+msgstr ""
+
+#: admin/team-admin.php:205
+msgid "URL of the Instagram feed for the team member."
+msgstr ""
+
+#: admin/testimonials-admin.php:106
+msgid "Title"
+msgstr ""
+
+#: admin/testimonials-admin.php:107
+msgid "Testimonial"
+msgstr ""
+
+#: admin/testimonials-admin.php:108
+msgid "Client's Image"
+msgstr ""
+
+#: admin/testimonials-admin.php:109
+msgid "Client's Name"
+msgstr ""
+
+#: admin/testimonials-admin.php:110
+msgid "Client Details"
+msgstr ""
+
+#: admin/testimonials-admin.php:111
+msgid "Testimonial Order"
+msgstr ""
+
+#: admin/testimonials-admin.php:121
+msgid "Testimonials Information"
+msgstr ""
+
+#: admin/testimonials-admin.php:137
+msgid "Client Name:"
+msgstr ""
+
+#: admin/testimonials-admin.php:140
+msgid "Enter the name of the client for the testimonial."
+msgstr ""
+
+#: admin/testimonials-admin.php:145
+msgid "Client Details:"
+msgstr ""
+
+#: admin/testimonials-admin.php:148
+msgid ""
+"Enter additional details like position, business name, URL etc. for the "
+"source of the testimonial."
+msgstr ""
+
+#: includes/register-post-types.php:30
+msgid "Add New Testimonial"
+msgstr ""
+
+#: includes/register-post-types.php:31
+msgid "Edit Testimonial"
+msgstr ""
+
+#: includes/register-post-types.php:32
+msgid "New Testimonial"
+msgstr ""
+
+#: includes/register-post-types.php:33
+msgid "View Testimonial"
+msgstr ""
+
+#: includes/register-post-types.php:34
+msgid "Search Testimonials"
+msgstr ""
+
+#: includes/register-post-types.php:35
+msgid "No Testimonials found"
+msgstr ""
+
+#: includes/register-post-types.php:36
+msgid "No Testimonials in the trash"
+msgstr ""
+
+#: includes/register-post-types.php:65
+msgid "Add New Pricing Plan"
+msgstr ""
+
+#: includes/register-post-types.php:66
+msgid "Edit Pricing Plan"
+msgstr ""
+
+#: includes/register-post-types.php:67
+msgid "New Pricing Plan"
+msgstr ""
+
+#: includes/register-post-types.php:68
+msgid "View Pricing Plan"
+msgstr ""
+
+#: includes/register-post-types.php:69
+msgid "Search Pricing Plans"
+msgstr ""
+
+#: includes/register-post-types.php:70
+msgid "No Pricing Plans found"
+msgstr ""
+
+#: includes/register-post-types.php:71
+msgid "No Pricing Plans in the trash"
+msgstr ""
+
+#: includes/register-post-types.php:101
+msgid "Add New Profile"
+msgstr ""
+
+#: includes/register-post-types.php:102
+msgid "Edit Profile"
+msgstr ""
+
+#: includes/register-post-types.php:103
+msgid "New Profile"
+msgstr ""
+
+#: includes/register-post-types.php:104
+msgid "View Profile"
+msgstr ""
+
+#: includes/register-post-types.php:105
+msgid "Search Profiles"
+msgstr ""
+
+#: includes/register-post-types.php:106
+msgid "No Profiles Found"
+msgstr ""
+
+#: includes/register-post-types.php:107
+msgid "No Profiles Found in Trash"
+msgstr ""
+
+#: includes/register-post-types.php:132
+msgid "Search Department"
+msgstr ""
+
+#: includes/register-post-types.php:133
+msgid "All Departments"
+msgstr ""
+
+#: includes/register-post-types.php:134
+msgid "Parent Department"
+msgstr ""
+
+#: includes/register-post-types.php:135
+msgid "Parent Department:"
+msgstr ""
+
+#: includes/register-post-types.php:136
+msgid "Edit Department"
+msgstr ""
+
+#: includes/register-post-types.php:137
+msgid "Update Department"
+msgstr ""
+
+#: includes/register-post-types.php:138
+msgid "Add New Department"
+msgstr ""
+
+#: includes/register-post-types.php:139
+msgid "New Department Name"
+msgstr ""
+
+#: includes/register-post-types.php:164
+msgid "Add New Portfolio Entry"
+msgstr ""
+
+#: includes/register-post-types.php:165
+msgid "Edit Portfolio Entry"
+msgstr ""
+
+#: includes/register-post-types.php:166
+msgid "New Portfolio Entry"
+msgstr ""
+
+#: includes/register-post-types.php:167
+msgid "View Portfolio Entry"
+msgstr ""
+
+#: includes/register-post-types.php:168
+msgid "Search Portfolio Entries"
+msgstr ""
+
+#: includes/register-post-types.php:169
+msgid "No Portfolio Entries Found"
+msgstr ""
+
+#: includes/register-post-types.php:170
+msgid "No Portfolio Entries Found in Trash"
+msgstr ""
+
+#: includes/register-post-types.php:195
+msgid "Portfolio Categories"
+msgstr ""
+
+#: includes/register-post-types.php:196
+msgid "Portfolio Category"
+msgstr ""
+
+#: includes/register-post-types.php:211
+msgid "Add New Gallery Entry"
+msgstr ""
+
+#: includes/register-post-types.php:212
+msgid "Edit Gallery Entry"
+msgstr ""
+
+#: includes/register-post-types.php:213
+msgid "New Gallery Entry"
+msgstr ""
+
+#: includes/register-post-types.php:214
+msgid "View Gallery Entry"
+msgstr ""
+
+#: includes/register-post-types.php:215
+msgid "Search Gallery Entries"
+msgstr ""
+
+#: includes/register-post-types.php:216
+msgid "No Gallery Entries Found"
+msgstr ""
+
+#: includes/register-post-types.php:217
+msgid "No Gallery Entries Found in Trash"
+msgstr ""
+
+#: includes/register-post-types.php:242
+msgid "Gallery Categories"
+msgstr ""
+
+#: includes/register-post-types.php:243
+msgid "Gallery Category"
+msgstr ""
+
+#: includes/register-post-types.php:259
+msgid "Add New Page Section"
+msgstr ""
+
+#: includes/register-post-types.php:260
+msgid "Edit Page Section"
+msgstr ""
+
+#: includes/register-post-types.php:261
+msgid "New Page Section"
+msgstr ""
+
+#: includes/register-post-types.php:262
+msgid "View Page Section"
+msgstr ""
+
+#: includes/register-post-types.php:263
+msgid "Search Page Sections"
+msgstr ""
+
+#: includes/register-post-types.php:264
+msgid "No Page Sections Found"
+msgstr ""
+
+#: includes/register-post-types.php:265
+msgid "No Page Sections Found in Trash"
+msgstr ""
+
+#: includes/register-post-types.php:270
+msgid ""
+"A custom post type which represents a section like about, work, services, "
+"team etc. part of a typical single page site. Can be made up of one or more "
+"segments."
+msgstr ""
+
+#: includes/register-post-types.php:294
+msgid "Showcase Slides"
+msgstr ""
+
+#: includes/register-post-types.php:295
+msgid "Showcase Slide"
+msgstr ""
+
+#: includes/register-post-types.php:298
+msgid "Add New Slide"
+msgstr ""
+
+#: includes/register-post-types.php:299
+msgid "Edit Slide"
+msgstr ""
+
+#: includes/register-post-types.php:300
+msgid "New Slide"
+msgstr ""
+
+#: includes/register-post-types.php:301
+msgid "View Slide"
+msgstr ""
+
+#: includes/register-post-types.php:302
+msgid "Search Slides"
+msgstr ""
+
+#: includes/register-post-types.php:303
+msgid "No Slides Found"
+msgstr ""
+
+#: includes/register-post-types.php:304
+msgid "No Slides Found in Trash"
+msgstr ""
+
+#: includes/register-post-types.php:307
+msgid ""
+"A custom post type which has the required information to display showcase "
+"slides in a slider"
+msgstr ""

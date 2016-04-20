@@ -1,0 +1,24 @@
+/*--------------- Metabox styling ----------------*/
+
+.lm-metabox-wrap .description {
+    font-style: italic;
+    padding: 0 0 15px;
+    }
+
+.lm-metabox-wrap label {
+    font-weight: bold;
+    font-size: larger;
+    display: block;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    }
+
+.lm-metabox-wrap input[type="text"] {
+    width: 100%;
+    padding: 5px 10px;
+    max-width: 400px;
+    }
+.lm-metabox-wrap .lm-metabox {
+    margin: 25px 0;
+    }

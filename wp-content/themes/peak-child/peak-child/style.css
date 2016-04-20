@@ -1,0 +1,13 @@
+/*
+Theme Name:     Peak Child
+Theme URI:      http://portfoliotheme.org/peak
+Description:    Child theme for the Peak Theme by LiveMesh
+Author:         LiveMesh
+Author URI:     http://themeforest.net/user/livemesh
+Template:       peak
+Version:        0.1.0
+*/
+
+#header.sticky #site-logo {
+    top: 5px;
+    }

@@ -1,0 +1,32 @@
+/**
+* All of the CSS for your public-facing functionality should be
+* included in this file.
+*/
+
+.single-fundraiser, .single-team {
+	margin-bottom: 10px;
+	clear: both;
+}
+.image-container {
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-right: 10px;	
+}
+
+.classy p, .fundraiser-details p, .team-details p {
+	margin-bottom: 0px;
+}
+
+.single-campaign-thumbnail, .fundraiser-image-container, .team-image-container {
+	float: left;
+}
+
+.single-campaign-thumbnail img, .fundraiser-image-container img, .team-image-container img {
+	width: 85px; 
+	margin: 0 10px;
+}
+
+.fundraiser-details, .team-details {
+	float: left;
+}
