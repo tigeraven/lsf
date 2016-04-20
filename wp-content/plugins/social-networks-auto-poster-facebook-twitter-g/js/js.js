@@ -27,6 +27,14 @@ jQuery(document).ready(function() {
   $(function() {
      jQuery('#nxs_snapAddNew').bind('click', function(e) { e.preventDefault(); jQuery('#nxs_spPopup').bPopup({ modalClose: false, appendTo: '#nsStForm', opacity: 0.6, follow: [false, false], position: [65, 50]}); });
      jQuery('#showLic').bind('click', function(e) { e.preventDefault(); jQuery('#showLicForm').bPopup({ modalClose: false, appendTo: '#nsStForm', opacity: 0.6, follow: [false, false]}); });                                 
+     
+     jQuery('#nxs_resetSNAPInfoPosts').bind('click', function(e) { e.preventDefault(); var r = confirm("Are you sure?"); if (r == true) nxs_doAJXPopup('resetSNAPInfoPosts','','','Please wait....','')  });
+     jQuery('#nxs_deleteAllSNAPInfo').bind('click', function(e) { e.preventDefault(); var r = confirm("Are you sure?"); if (r == true) nxs_doAJXPopup('deleteAllSNAPInfo','','','Please wait....','')  });
+    
+
+     
+     
+     
      /* // Will move it here later for better compatibility
      jQuery('.button-primary[name="update_NS_SNAutoPoster_settings"]').bind('click', function(e) { var str = jQuery('input[name="post_category[]"]').serialize(); jQuery('div.categorydivInd').replaceWith('<input type="hidden" name="pcInd" value="" />'); 
        str = str.replace(/post_category/g, "pk"); jQuery('div.categorydiv').replaceWith('<input type="hidden" name="post_category" value="'+str+'" />');  

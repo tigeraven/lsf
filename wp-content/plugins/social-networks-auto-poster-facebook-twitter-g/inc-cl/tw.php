@@ -2,7 +2,7 @@
 //## NextScripts Twitter Connection Class
 $nxs_snapAvNts[] = array('code'=>'TW', 'lcode'=>'tw', 'name'=>'Twitter');
 
-if (!class_exists("nxs_snapClassTW")) { class nxs_snapClassTW {
+if (!class_exists("nxs_snapClassTW")) { class nxs_snapClassTW {var $ntInfo = array('code'=>'TW', 'lcode'=>'tw', 'name'=>'Twitter', 'defNName'=>'dlUName', 'tstReq' => true); 
   //#### Show Common Settings  
   function showGenNTSettings($ntOpts){  global $nxs_plurl; $ntInfo = array('code'=>'TW', 'lcode'=>'tw', 'name'=>'Twitter', 'defNName'=>'dlUName', 'tstReq' => true); 
     $ntParams = array('ntInfo'=>$ntInfo, 'nxs_plurl'=>$nxs_plurl, 'ntOpts'=>$ntOpts, 'chkField'=>'twAccTokenSec'); nxs_showListRow($ntParams);     
@@ -131,8 +131,8 @@ if (!class_exists("nxs_snapClassTW")) { class nxs_snapClassTW {
       <?php if ($post->post_status == "publish") { ?> <input type="hidden" name="tw[<?php echo $ii; ?>][doTW]" value="<?php echo $doTW;?>"> <?php } ?> <?php } ?>
       <div class="nsx_iconedTitle" style="display: inline; font-size: 13px; background-image: url(<?php echo $nxs_plurl; ?>img/tw16.png);">Twitter - <?php _e('autopost to', 'social-networks-auto-poster-facebook-twitter-g') ?> (<i style="color: #005800;"><?php echo $ntOpt['nName']; ?></i>)
       </div></th><td><?php //## Only show RePost button if the post is "published"
-      if ($post->post_status == "publish" && $isAvailTW) { ?>
-                    <input alt="<?php echo $ii; ?>" style="float: right;" onmouseout="hidePopShAtt('SV');" onmouseover="showPopShAtt('SV', event);" onclick="return false;" type="button" class="button" name="rePostToTW_repostButton" id="rePostToTW_button" value="<?php _e('Repost to Twitter', 'social-networks-auto-poster-facebook-twitter-g') ?>" />
+      if ($post->post_status == "publish" && $isAvailTW) { ?><?php $ntName = $this->ntInfo['name']; ?>
+                    <input alt="<?php echo $ii; ?>" style="float: right;" onmouseout="hidePopShAtt('SV');" onmouseover="showPopShAtt('SV', event);" onclick="return false;" data-ntname="<?php echo $ntName; ?>" type="button" class="button manualPostBtn" name="<?php echo $nt."-".$post->ID; ?>" value="<?php _e('Post to ', 'social-networks-auto-poster-facebook-twitter-g'); echo $ntName; ?>" />
     
     <?php if ($ntOpt['riComments']=='1' && (is_array($pMeta) && isset($pMeta[$ii]) && is_array($pMeta[$ii]) && isset($pMeta[$ii]['pgID']) && $pMeta[$ii]['pgID']!='' ) ) { ?>
        <input alt="<?php echo $ii; ?>" style="float: right; " onclick="return false;" type="button" class="button" name="riToTW_repostButton" id="riToTW_button" value="<?php _e('Import Replies/Mentions from Twitter', 'social-networks-auto-poster-facebook-twitter-g') ?>" />

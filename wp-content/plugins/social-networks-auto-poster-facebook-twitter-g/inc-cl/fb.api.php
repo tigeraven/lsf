@@ -65,8 +65,8 @@ if (!class_exists("nxs_class_SNAP_FB")) { class nxs_class_SNAP_FB {
             $aacct = array('access_token'=>$options['fbAppPageAuthToken'], 'appsecret_proof'=>$options['appsecret_proof'], 'method'=>'get');  
             $res = wp_remote_get( "https://graph.facebook.com/$page_id/albums?".http_build_query($aacct, null, '&'),$wprg); 
             if (is_wp_error($res) || empty($res['body'])) $badOut['Error'] = ' [ERROR(Albums)] '.print_r($res, true); else {
-              $albums = json_decode($res['body'], true);  if (empty($albums)) $badOut['Error'] .= "JSON ERROR (Albums): ".print_r($res, true); else {
-                if (is_array($albums) && is_array($albums["data"])) foreach ($albums["data"] as $album) { if ($album["type"] == "wall") { $chosen_album = $album; break;}}
+              $albums = json_decode($res['body'], true);  if (empty($albums)) $badOut['Error'] .= "JSON ERROR (Albums): ".print_r($res, true); else { 
+                if (is_array($albums) && is_array($albums["data"])) foreach ($albums["data"] as $album) { if (!empty($album["type"]) && $album["type"] == "wall") { $chosen_album = $album; break;}}
                 if (isset($chosen_album) && isset($chosen_album["id"])) $page_id = $chosen_album["id"];
               }
             }

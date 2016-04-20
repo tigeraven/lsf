@@ -13,7 +13,7 @@ if (!class_exists("nxs_snapClassIG")) { class nxs_snapClassIG extends nxs_snapCl
   function showNewNTSettings($ii){ $defO = array('nName'=>'', 'do'=>'1', 'uName'=>'', 'uPass'=>'', 'msgTFormat'=>'', 'msgFormat'=>"%TITLE% \n %HTAGS%"); $this->showGNewNTSettings($ii, $defO); }
   //#### Show Unit  Settings  
   function checkIfSetupFinished($options) { return !empty($options['uPass']); }
-  function accTab($ii, $options, $isNew=false){ $ntInfo = $this->ntInfo; $nt = $ntInfo['lcode']; $this->elemUserPass($ii, $options['uName'], $options['uPass'], 'e'); ?> <br/ >    
+  function accTab($ii, $options, $isNew=false){ $ntInfo = $this->ntInfo; $nt = $ntInfo['lcode']; $this->elemUserPass($ii, $options['uName'], $options['uPass']); ?> <br/ >    
     <div style="width:100%;"><strong id="altFormatText"><?php _e('What do to with the image', 'social-networks-auto-poster-facebook-twitter-g'); ?> :</strong>&lt;-- (<a id="showShAtt" onmouseout="hidePopShAtt('<?php echo $ii; ?>IG');" onmouseover="showPopShAtt('<?php echo $ii; ?>IG', event);" onclick="return false;" class="underdash" href="#"><?php _e('What\'s the difference?', 'social-networks-auto-poster-facebook-twitter-g'); ?></a>)  </div>                      
     <div style="margin-left: 10px;">
     <input type="radio" name="<?php echo $nt; ?>[<?php echo $ii; ?>][imgAct]" value="E" <?php if (empty($options['imgAct']) || $options['imgAct'] == 'E') echo 'checked="checked"'; ?> /> <?php _e('Make it Square: Extend', 'social-networks-auto-poster-facebook-twitter-g'); ?> - <i><?php _e('Image will be extended to square', 'social-networks-auto-poster-facebook-twitter-g'); ?></i><br/>

@@ -26,10 +26,14 @@ if (!class_exists("nxs_class_SNAP_TG")) { class nxs_class_SNAP_TG {
 	  if (isset($message['imageURL'])) $imgURL = trim(nxs_getImgfrOpt($message['imageURL'], $options['imgSize'])); else $imgURL = ''; 
 	  $urlToGo = (!empty($message['url']))?$message['url']:'';
 	  
-	  //$fields = array( 'chat_id' => $chatter,'photo' =>'@'. $photo. ';filename=' . $photo, 'caption' => $caption );
-	  //$url = 'https://api.telegram.org/bot'.$token.'/sendPhoto';
-	  
-	  $msg = nsTrnc(strip_tags($msg), 3000); $url = 'https://api.telegram.org/bot'.$options['botTkn'].'/sendMessage'; $options['whToPost'] = str_ireplace('g','-',$options['whToPost']);
+      if (substr($options['whToPost'],0,1)=='g') $options['whToPost'] = substr_replace($options['whToPost'], '-',0,1); //## Fix for Groups ID
+      //## Attach Image
+      if ($options['attchImg']=='1') { $url = 'https://api.telegram.org/bot'.$options['botTkn'].'/sendPhoto'; 
+	    $fields = array( 'chat_id' => $options['whToPost'],'photo' =>'@photo;filename=' . $imgURL, 'caption' => '' );
+        $imgRes = nxs_curlUploadImg($imgURL, $url, $fields, 'photo'); if (is_array($imgRes) && !empty($imgRes['err'])) { $options['attchImg'] = 0; 
+            nxs_addToLogN('E','Error','TG','Could not get image ( '.$imgURL.' ), will post without it - ', print_r($imgRes['err'], true));
+        }//  $contents = $imgRes['body']; $resp = json_decode($contents, true);     prr($resp);
+      }	 $msg = nsTrnc(strip_tags($msg), 3000); $url = 'https://api.telegram.org/bot'.$options['botTkn'].'/sendMessage'; 
 	  $flds = array('chat_id' => $options['whToPost'], 'text' => $msg, 'parse_mode' => 'Markdown', 'disable_web_page_preview' => false); $hdrsArr = $this->nxs_getHeaders('https://api.telegram.org', true);
 	  $advSet = nxs_mkRemOptsArr($hdrsArr, '', $flds); $ret = wp_remote_post( $url, $advSet); if (is_nxs_error($ret)) {  $badOut = print_r($ret, true)." - ERROR"; return $badOut; }       
 	  $contents = $ret['body']; $resp = json_decode($contents, true);	//  prr($resp);

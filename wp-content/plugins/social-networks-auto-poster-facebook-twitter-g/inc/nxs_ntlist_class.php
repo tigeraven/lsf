@@ -200,7 +200,7 @@ class nxs_snapClassNT {
       <div class="nsx_iconedTitle" id="ldo<?php echo $ntU.$ii; ?>" style="display: inline; font-size: 13px; background-image: url(<?php echo NXS_PLURL; ?>img/<?php echo $nt; ?>16.png);"><?php echo $ntName; ?> (<i style="color: #005800;"><?php echo $ntOpt['nName']; ?></i>)
       </div></th><td><?php //## Only show RePost button if the post is "published"
       if ($post->post_status == "publish") { ?>
-        <input alt="<?php echo $ii; ?>" style="float: right;" onmouseout="hidePopShAtt('SV');" onmouseover="showPopShAtt('SV', event);" onclick="return false;" data-ntname="<?php echo $ntName; ?>" type="button" class="button manualPostBtn" name="<?php echo $nt."-".$post->ID; ?>" value="<?php _e('Post to ', 'nxs_snap'); echo $ntName; ?>" />
+        <input alt="<?php echo $ii; ?>" style="float: right;" onmouseout="hidePopShAtt('SV');" onmouseover="showPopShAtt('SV', event);" onclick="return false;" data-ntname="<?php echo $ntName; ?>" type="button" class="button manualPostBtn" name="<?php echo $nt."-".$post->ID; ?>" value="<?php _e('Post to ', 'social-networks-auto-poster-facebook-twitter-g'); echo $ntName; ?>" />
     
       <?php if (!empty($ntOpt['riComments']) && $ntOpt['riComments']=='1' && is_array($pMeta) && isset($pMeta[$ii]) && is_array($pMeta[$ii]) && !empty($pMeta[$ii]['pgID'])) { ?>
       <input alt="<?php echo $ii; ?>" style="float: right; " onclick="return false;" type="button" class="button" name="riTo<?php echo $ntU; ?>_repostButton" value="<?php _e('Import Comments/Replies', 'nxs_snap') ?>" />
@@ -212,7 +212,7 @@ class nxs_snapClassNT {
       if ($post->post_status != "publish" && function_exists('nxs_doSMAS5') ) { $ntOpt['postTime'] = get_post_time('U', false, $post_id); nxs_doSMAS5($nt, $ii, $ntOpt); }
       
       if (((int)$ntOpt['do'] == 1) && $post->post_status == "publish" && isset($ntOpt['timeToRun']) && $ntOpt['timeToRun'] > time()) { ?> <tr><th style="text-align:left; color: purple;" colspan="2">
-                ===&gt;&gt;&gt;&gt;&nbsp;<?php _e('Autopost has been schedulled for', 'nxs_snap') ?> <?php echo date('F j, Y, g:i a', $ntOpt['timeToRun']) ?></th> <?php }         
+                ===&gt;&gt;&gt;&gt;&nbsp;<?php _e('Autopost has been schedulled for', 'social-networks-auto-poster-facebook-twitter-g') ?> <?php echo date('F j, Y, g:i a', $ntOpt['timeToRun']) ?></th> <?php }         
     }
     public function nxs_tmpltAddPostMetaEnd($ii){ $ntU = $this->ntInfo['code'];
       ?><tr class="<?php echo 'nxstbldo'.$ntU.$ii; ?>"><td colspan="2" style="padding:5px;border-bottom:1px solid #F0F0F0;"></td></tr><?php
@@ -249,15 +249,15 @@ class nxs_snapClassNT {
          nxs_addToLogN('W', 'Notice', $logNT, '-=Duplicate=- Post ID:'.$postID, 'Already posted. No reason for posting duplicate |'.$uqID); return;
         }
       }    
-      $isNoImg = false; //## Fix this with defaults
+      $isNoImg = false; $tagsA = array(); $tags = '';//## Fix this with defaults
       if ($postID=='0') { echo "Testing ... <br/><br/>"; $urlToGo = home_url(); $options['msgFormat'] = 'Test Post from '.$blogTitle."\r\n".$urlToGo; $options['msgTFormat'] = 'Test Post from '.$blogTitle;
-        if (!empty($options['defImg'])) $imgURL = $options['defImg']; else $imgURL ="http://direct.gtln.us/img/nxs/NXS-Lama.jpg"; $tags = '';
+        if (!empty($options['defImg'])) $imgURL = $options['defImg']; else $imgURL ="http://direct.gtln.us/img/nxs/NXS-Lama.jpg";
       } else { $post = get_post($postID); if(empty($post)) {nxs_addToLogN('E', 'Error', $logNT, 'No Post');} if (!isset($options['defImg'])) $options['defImg'] = '';
         if (!empty($options['msgFormat']))$options['msgFormat'] = nsFormatMessage( $options['msgFormat'], $postID, $addParams); if (!empty($options['msgTFormat'])) $options['msgTFormat'] = nsFormatMessage( $options['msgTFormat'], $postID, $addParams);
         //## MyURL - URLToGo code
         $options = nxs_getURL($options, $postID, $addParams); $urlToGo = $options['urlToUse']; if (is_object($post)) $urlToGo = apply_filters( 'nxs_adjust_ex_url', $urlToGo, $post->post_content);      
         if (!empty($options['imgToUse'])) $imgURL = $options['imgToUse']; else $imgURL = nxs_getPostImage($postID, 'full', $options['defImg']); if (preg_match("/noImg.\.png/i", $imgURL)) $imgURL = '';
-        $tags = ''; $tagsA = array(); if (!empty($options['inclTags']) && $options['inclTags']=='1'){$t = wp_get_post_tags($postID); foreach ($t as $tagA) {$tagsA[] = $tagA->name;} $tags = implode(',',$tagsA);; }
+        if (!empty($options['inclTags']) && $options['inclTags']=='1'){$t = wp_get_post_tags($postID); foreach ($t as $tagA) {$tagsA[] = $tagA->name;} $tags = implode(',',$tagsA);; }
         $extInfo = ' | PostID: '.$postID." - ".(is_object($post))?$post->post_title:'';               
       } $message = array('siteName'=>$blogTitle, 'tags'=>$tags, 'tagsA'=>$tagsA, 'url'=>$urlToGo, 'imageURL'=>$imgURL, 'videoURL'=>'', 'noImg'=>$isNoImg, 'message'=>'');// prr($message);          
       //## Post

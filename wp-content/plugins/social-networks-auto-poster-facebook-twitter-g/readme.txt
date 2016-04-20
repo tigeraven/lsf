@@ -4,8 +4,8 @@ Contributors: NextScripts
 Donate link: http://www.nextscripts.com/social-networks-auto-poster-for-wordpress
 Tags: automation, autopost, auto-post, auto post, socialnetworks, socialnetwork, social networks, social network, facebook, Flipboard, google, google+, Flickr, twitter, google plus, pinterest, tumblr, blogger, blogspot, blogpost, linkedin, delicious, delicious.com, reddit, reddit.com, plugin, links, Post, posts, api, automatic, seo, scoop.it, integration, bookmark, bookmarks, admin, images, image, social, sharing, share, repost, re-post, wordpress.com, StumbleUpon, Diigo, vBulletin, Plurk, forums, vKontakte, open graph, LiveJournal, SETT, YouTube, Telegram, Instagram, xing
 Requires at least: 3.4
-Tested up to: 4.4.2
-Stable tag: 3.5.4
+Tested up to: 4.5.0
+Stable tag: 3.5.5
 License: GPLv2 or later
 
 Automatically re-publishes blogposts to Facebook, Twitter, Google+, Pinterest, LinkedIn, Blogger, Tumblr, Delicious, Plurk, etc profiles and/or pages
@@ -165,9 +165,17 @@ Please see more <a href="http://www.nextscripts.com/faq/">Frequently asked quest
 
 == Changelog ==
 
+= 3.5.5 [04/18/2016] =
+
+* New - Wordpress 4.5 Compatibility
+* New [Telegram] - Ability to attach image to the post.
+* Improvement - Speed improvement via removal of unnsessary Javascript code. 
+* Bug Fix - [Telegram] "Bad Request: channel not found" error.
+* Bug Fix - [Plurk] "missing request token" Error
+
 = 3.5.4 [04/11/2016] =
 
-* Improvement - Support for Disqus Conditional Load (DCL) plugin
+* New/Improvement - Support for Disqus Conditional Load (DCL) plugin
 * Improvement/Bug Fix - Better compatibility with some themes. Plugin was causing conflicts with media upload when used with some popular themes.
 * Bug Fix - [Flickr] Authorization problems and/or "Call to undefined function" error.
 * Bug Fix - [LinkedIn] Authorization problems and/or "Call to undefined function" error.
@@ -189,7 +197,7 @@ Please see more <a href="http://www.nextscripts.com/faq/">Frequently asked quest
 * Fix for youtube "200|{"redirect_url":" problem.
 * Fix for "Required parameter oauth_token missing" error
 
-= 3.5.1 [07/03/2016] =
+= 3.5.1 [03/07/2016] =
 
 * New network "Telegram" - Autopost to your channel, group or chat.
 * New network "Instagram" - Post your blogpost's featured image along with message to your Instagram account.(*SNAP API Library subscription required*)

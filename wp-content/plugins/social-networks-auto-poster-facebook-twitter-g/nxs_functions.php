@@ -105,7 +105,7 @@ if (!function_exists('nxs_getPostImage')){ function nxs_getPostImage($postID, $s
   if ((int)$postID>0 && isset($options['featImgLoc']) && $options['featImgLoc']!=='') {  $afiLoc= get_post_meta($postID, $options['featImgLoc'], true); 
     if (is_array($afiLoc) && $options['featImgLocArrPath']!='') { $cPath = $options['featImgLocArrPath'];
       while (strpos($cPath, '[')!==false){ $arrIt = CutFromTo($cPath, '[', ']'); $arrIt = str_replace("'", "", str_replace('"', '', $arrIt)); $afiLoc = $afiLoc[$arrIt]; $cPath = substr($cPath, strpos($cPath, ']'));}    
-    } $imgURL = trim($options['featImgLocPrefix']).trim($afiLoc); if ($imgURL!='' && stripos($imgURL, 'http')===false) $imgURL =  home_url().$imgURL;
+    } $imgURL = ""; if (trim($afiLoc) !="") $imgURL = trim($options['featImgLocPrefix']) . trim($afiLoc); if ($imgURL!='' && stripos($imgURL, 'http')===false) $imgURL =  home_url().$imgURL;
   }
   if ($imgURL!='' && $options['imgNoCheck']!='1' && nxs_chckRmImage($imgURL)==false) $imgURL = '';  if ($imgURL!='') return $imgURL;
   //## Featured Image
@@ -220,13 +220,10 @@ if (!function_exists("jsPostToSNAP")) { function jsPostToSNAP() {  global $nxs_s
         nxs_updateGetImgs();
     });       
     jQuery(document).ready(function($) {          
-    <?php       
-      foreach ($nxs_snapAvNts as $avNt) {?>
-        jQuery('input#rePostTo<?php echo $avNt['code']; ?>_button').click(function() { var data = { action: 'rePostTo<?php echo $avNt['code']; ?>', id: jQuery('input#post_ID').val(), nid:jQuery(this).attr('alt'), _wpnonce: jQuery('input#nxsSsPageWPN_wpnonce').val()}; callAjSNAP(data, '<?php echo $avNt['name']; ?>'); });
-    <?php } 
-     foreach ($nxs_snapAvNts as $avNt) {?>
-        jQuery('input#riTo<?php echo $avNt['code']; ?>_button').click(function() { var data = { action: 'rePostTo<?php echo $avNt['code']; ?>', id: jQuery('input#post_ID').val(), ri:1, nid:jQuery(this).attr('alt'), _wpnonce: jQuery('input#nxsSsPageWPN_wpnonce').val()}; callAjSNAP(data, '<?php echo $avNt['name']; ?>'); });
-    <?php } ?>
+            
+      jQuery('input#riToFB_button').click(function() { var data = { action: 'rePostToFB', id: jQuery('input#post_ID').val(), ri:1, nid:jQuery(this).attr('alt'), _wpnonce: jQuery('input#nxsSsPageWPN_wpnonce').val()}; callAjSNAP(data, 'Facebook'); });            
+      jQuery('input#riToTW_button').click(function() { var data = { action: 'rePostToTW', id: jQuery('input#post_ID').val(), ri:1, nid:jQuery(this).attr('alt'), _wpnonce: jQuery('input#nxsSsPageWPN_wpnonce').val()}; callAjSNAP(data, 'Twitter'); });
+    
        function callAjSNAP(data, label) { 
             var style = "position: fixed; display: none; z-index: 1000; top: 50%; left: 50%; background-color: #E8E8E8; border: 1px solid #555; padding: 15px; width: 350px; min-height: 80px; margin-left: -175px; margin-top: -40px; text-align: center; vertical-align: middle;";
             jQuery('body').append("<div id='test_results' style='" + style + "'></div>");
@@ -287,6 +284,15 @@ if (!function_exists("nxs_jsPostToSNAP2")){ function nxs_jsPostToSNAP2() { globa
      jQuery('#nxs_gPopup').bPopup({ modalClose: false, appendTo: '#nsStForm', opacity: 0.6, positionStyle: 'fixed'});  
      jQuery.post(ajaxurl, data, function(response) { if (response=='') response = 'Message Posted';
        jQuery('#nxs_gPopupContent').html('<p> ' + response + '</p>' +'<input type="button" class="bClose" value="OK" />');
+     });      
+       
+  }
+    
+  function nxs_doAJXPopup(act, nt, nid, msg, addprms, butText){  var data = {  action:'nxs_snap_aj', nxsact: act, nt:nt, id: 0, nid: nid, _wpnonce: jQuery('input#nxsSsPageWPN_wpnonce').val()};
+     jQuery('#nxs_gPopupContent').html(msg+" <p><img src='<?php echo NXS_PLURL; ?>img/ajax-loader-med.gif' /></p>");
+     jQuery('#nxs_gPopup').bPopup({ modalClose: false, appendTo: '#wpbody-content', opacity: 0.6, positionStyle: 'fixed'});  
+     jQuery.post(ajaxurl, data, function(response) { if (response=='') response = 'Message Posted'; if (butText === undefined || butText=='undefined' || butText=='') butText = 'Close';
+       jQuery('#nxs_gPopupContent').html('<p> ' + response + '</p>' +'<input type="button" class="bClose" value="'+butText+'" />');
      });      
        
   }
@@ -366,7 +372,7 @@ if (!function_exists("nxs_jsPostToSNAP2")){ function nxs_jsPostToSNAP2() { globa
     }
     
     function nxs_doManPost(obj){ var nnid = jQuery( this ).attr('name'); var nid = jQuery( this ).attr('alt'); var res = nnid.split("-"); var nt = res[0]; var pid = res[1]; var ntn = jQuery( this ).attr('data-ntname');
-     var data = {  action:'nxs_snap_aj', nxsact: 'manPost', nt:nt, id: pid, nid: nid, _wpnonce: jQuery('input#nxsSsPageWPN_wpnonce').val()};
+     var data = {  action:'nxs_snap_aj', nxsact: 'manPost', nt:nt, id: pid, nid: nid, et_load_builder_modules:1, _wpnonce: jQuery('input#nxsSsPageWPN_wpnonce').val()};
      jQuery('#nxs_gPopupContent').html("<p>Sending update to "+ntn+" ....</p>" + "<p><img src='<?php echo NXS_PLURL; ?>img/ajax-loader-med.gif' /></p>");
      jQuery('#nxs_gPopup').bPopup({ modalClose: false, appendTo: '#nsStForm', opacity: 0.6, positionStyle: 'fixed'});  
      jQuery.post(ajaxurl, data, function(response) { if (response=='') response = 'Message Posted';

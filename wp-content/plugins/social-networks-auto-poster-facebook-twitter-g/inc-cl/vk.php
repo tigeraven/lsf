@@ -2,7 +2,7 @@
 //## NextScripts vKontakte(VK) Connection Class
 $nxs_snapAvNts[] = array('code'=>'VK', 'lcode'=>'vk', 'name'=>'vKontakte(VK)');
 
-if (!class_exists("nxs_snapClassVK")) { class nxs_snapClassVK {
+if (!class_exists("nxs_snapClassVK")) { class nxs_snapClassVK { var $ntInfo = array('code'=>'VK', 'lcode'=>'vk', 'name'=>'vKontakte(VK)', 'defNName'=>'', 'tstReq' => false);
   //#### Show Common Settings  
   function showGenNTSettings($ntOpts){  global $nxs_plurl; $ntInfo = array('code'=>'VK', 'lcode'=>'vk', 'name'=>'vKontakte(VK)', 'defNName'=>'', 'tstReq' => false); ?>    
     <div class="nxs_box">
@@ -221,8 +221,8 @@ if (!class_exists("nxs_snapClassVK")) { class nxs_snapClassVK {
         <?php if ($post->post_status == "publish") { ?> <input type="hidden" name="vk[<?php echo $ii; ?>][doVK]" value="<?php echo $doVK;?>"> <?php } ?> <?php } ?>      
         <div class="nsx_iconedTitle" style="display: inline; font-size: 13px; background-image: url(<?php echo $nxs_plurl; ?>img/vk16.png);">vKontakte(VK) - <?php _e('publish to', 'social-networks-auto-poster-facebook-twitter-g') ?> (<i style="color: #005800;"><?php echo $ntOpt['nName']; ?></i>)</div></th>
         <td><?php //## Only show RePost button if the post is "published"
-        if ($post->post_status == "publish" && $isAvailVK) { ?>
-          <input alt="<?php echo $ii; ?>" style="float: right;" onmouseout="hidePopShAtt('SV');" onmouseover="showPopShAtt('SV', event);" onclick="return false;" type="button" class="button" name="rePostToVK_repostButton" id="rePostToVK_button" value="<?php _e('Repost to vKontakte(VK)', 'social-networks-auto-poster-facebook-twitter-g') ?>" />
+        if ($post->post_status == "publish" && $isAvailVK) { ?><?php $ntName = $this->ntInfo['name']; ?>
+                    <input alt="<?php echo $ii; ?>" style="float: right;" onmouseout="hidePopShAtt('SV');" onmouseover="showPopShAtt('SV', event);" onclick="return false;" data-ntname="<?php echo $ntName; ?>" type="button" class="button manualPostBtn" name="<?php echo $nt."-".$post->ID; ?>" value="<?php _e('Post to ', 'social-networks-auto-poster-facebook-twitter-g'); echo $ntName; ?>" />
         <?php  } ?>
         <?php  if (is_array($pMeta) && is_array($pMeta[$ii]) && isset($pMeta[$ii]['pgID'])) { ?> <span id="pstdVK<?php echo $ii; ?>" style="float: right;padding-top: 4px; padding-right: 10px;">
              <a style="font-size: 10px;" href="http://vk.com/wall<?php echo $pMeta[$ii]['pgID']; ?>" target="_blank"><?php $nType="vKontakte(VK)"; printf( __( 'Posted on', 'social-networks-auto-poster-facebook-twitter-g' ), $nType); ?>  <?php echo (isset($pMeta[$ii]['pDate']) && $pMeta[$ii]['pDate']!='')?(" (".$pMeta[$ii]['pDate'].")"):""; ?></a>

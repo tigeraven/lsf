@@ -728,7 +728,7 @@ if ( is_array($category_ids) && is_array($pk) && count($category_ids) == count($
               elseif ($logline['type']=='GR') $actSt = "color:#008080;"; elseif ($logline['type']=='S') $actSt = "color:#005800; font-weight:bold;"; else $actSt = "color:#585858;";              
             if ($logline['type']=='E') $msgSt = "color:#FF0000;"; elseif ($logline['type']=='BG') $msgSt = "color:#008000; font-weight:bold;"; else $msgSt = "color:#585858;";                            
             if ($logline['nt']!='') $ntInfo = ' ['.$logline['nt'].'] '; else $ntInfo = '';           
-            echo '<snap style="color:#008000">['.$logline['date'].']</snap> - <snap style="'.$actSt.'">['.$logline['act'].']</snap>'.$ntInfo.'-  <snap style="'.$msgSt.'">'.$logline['msg'].'</snap> '.$logline['extInfo'].'<br/>'; 
+            echo '<snap style="color:#008000">['.$logline['date'].']</snap> - <snap style="'.$actSt.'">['.$logline['act'].']</snap>'.$ntInfo.'-  <snap style="'.$msgSt.'">'.$logline['msg'].'</snap> '.strip_tags($logline['extInfo'], '<a><b><i><p><span><div>').'<br/>'; 
           } ?>
       </div>        
       <?php $quPosts = maybe_unserialize(get_option('NSX_PostsQuery')); if (!is_array($quPosts)) $quPosts = array(); if (count($quPosts)>0) { ?>
@@ -815,6 +815,11 @@ _e('Plugin Version', 'social-networks-auto-poster-facebook-twitter-g'); ?>: <spa
    <br/><br/>
    <h3>Solutions for the most common problems: <a style="font-weight: normal; font-size: 16px; line-height: 24px;" target="_blank" href="http://www.nextscripts.com/troubleshooting-social-networks-auto-poster">Troubleshooting FAQ</a> </h3>
    
+   
+   <h4>Some evil buttons (Don't click unless you know what are you doing):</h4>
+   &nbsp;&nbsp;<a id="nxs_resetSNAPInfoPosts" href="#">[Remove all SNAP metainfo in the posts]</a> - this will remove all SNAP data that was saved in posts. 
+<br/>
+&nbsp;&nbsp;<a id="nxs_deleteAllSNAPInfo" href="#">[Delete all SNAP Data]</a> - This is a complete "Start Over". This will delete all SNAP data from the posts and all SNAP settings including all configured networks.
    
   </div> </div> 
   

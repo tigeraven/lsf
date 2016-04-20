@@ -7,14 +7,16 @@ if (!class_exists("nxs_snapClassTG")) { class nxs_snapClassTG extends nxs_snapCl
   //#### Show Common Settings
   function showGenNTSettings($ntOpts){ $this->nt = $ntOpts; $this->showNTGroup(); return; }  
   //#### Show NEW Settings Page
-  function showNewNTSettings($ii){ $defO = array('nName'=>'', 'do'=>'1', 'botTkn'=>'', 'msgTFormat'=>'', 'whToPost'=>'', 'msgFormat'=>'%TITLE% - %URL%'); $this->showGNewNTSettings($ii, $defO); }
+  function showNewNTSettings($ii){ $defO = array('nName'=>'', 'do'=>'1', 'botTkn'=>'', 'msgTFormat'=>'', 'whToPost'=>'', 'attchImg'=>0, 'msgFormat'=>'%TITLE% - %URL%'); $this->showGNewNTSettings($ii, $defO); }
   //#### Show Unit  Settings  
   function checkIfSetupFinished($options) { return !empty($options['botTkn']); }
-  function accTab($ii, $options, $isNew=false){ $ntInfo = $this->ntInfo; $nt = $ntInfo['lcode']; ?> <br/ >
+  function accTab($ii, $options, $isNew=false){ $ntInfo = $this->ntInfo; $nt = $ntInfo['lcode']; if (empty($options['attchImg'])) $options['attchImg'] = 0; ?> <br/ >
 	
 	<div style="width:100%;"><strong><?php _e('Bot Token', 'social-networks-auto-poster-facebook-twitter-g'); ?>:</strong></div><input name="tg[<?php echo $ii; ?>][botTkn]" style="width: 30%;" value="<?php _e(apply_filters('format_to_edit', htmlentities($options['botTkn'], ENT_COMPAT, "UTF-8")), 'social-networks-auto-poster-facebook-twitter-g') ?>" /><br/><br/>
 	<div style="width:100%;"><strong><?php _e('Where to Post', 'social-networks-auto-poster-facebook-twitter-g'); ?>:</strong><i><?php _e('Channel ID, Group ID or Chat ID', 'social-networks-auto-poster-facebook-twitter-g'); ?></i></div><input name="tg[<?php echo $ii; ?>][whToPost]" style="width: 30%;" value="<?php _e(apply_filters('format_to_edit', htmlentities($options['whToPost'], ENT_COMPAT, "UTF-8")), 'social-networks-auto-poster-facebook-twitter-g') ?>" /><br/><br/>    
-	<br/><?php $this->elemMsgFormat($ii,'Pin Description Format','msgFormat',$options['msgFormat']); 
+	<br/><?php $this->elemMsgFormat($ii,'Message Format','msgFormat',$options['msgFormat']); ?>
+    <div style="margin: 0px;"><input value="1" type="checkbox" name="<?php echo $nt; ?>[<?php echo $ii; ?>][attchImg]"  <?php if ((int)$options['attchImg'] == 1) echo "checked"; ?> /> <strong><?php _e('Attach Image to the Post', 'social-networks-auto-poster-facebook-twitter-g'); ?></strong></div>
+    <br/><?php 
   }
   function advTab(){}
   //#### Set Unit Settings from POST
@@ -23,6 +25,7 @@ if (!class_exists("nxs_snapClassTG")) { class nxs_snapClassTG extends nxs_snapCl
 	  if (!empty($pval['botTkn']) && !empty($pval['botTkn'])){ if (!isset($options[$ii])) $options[$ii] = array(); $options[$ii] = $this->saveCommonNTSettings($pval,$options[$ii]);
 		//## Uniqe Items
 		if (isset($pval['botTkn']))   $options[$ii]['botTkn'] = trim($pval['botTkn']);                
+        if (isset($pval['attchImg']))   $options[$ii]['attchImg'] = trim($pval['attchImg']); else $options[$ii]['attchImg'] = 0;
 		if (isset($pval['whToPost']))  $options[$ii]['whToPost'] = trim($pval['whToPost']);		        
 	  } elseif ( count($pval)==1 ) if (isset($pval['do'])) $options[$ii]['do'] = $pval['do']; else $options[$ii]['do'] = 0; 
 	} return $options;
